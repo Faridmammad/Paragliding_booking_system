@@ -14,14 +14,16 @@ A full-stack booking system for tandem paragliding flights.
 
 ## 🔧 Setup
 
-### 1. Install backend
+### Install backend
 ```bash
 cd server
 npm install
 npm run dev
+```
 
-### 1. Install frontend
+### Install frontend
 ```bash
 cd client
 npm install
 npm start
+```

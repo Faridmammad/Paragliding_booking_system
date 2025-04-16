@@ -1,0 +1,34 @@
+# Ignore node_modules from both frontend and backend
+client/node_modules/
+server/node_modules/
+
+# Ignore logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore build outputs
+client/build/
+client/dist/
+server/build/
+server/dist/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Env files (DO NOT COMMIT SECRETS)
+client/.env
+server/.env
+.env
+
+# VS Code config
+.vscode/
+
+# Coverage reports (if testing)
+coverage/
+*.lcov
+
+# Misc
+*.local

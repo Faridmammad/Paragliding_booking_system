@@ -35,7 +35,6 @@ const BookingForm = () => {
     e.preventDefault();
     try {
       await axios.post(`${process.env.REACT_APP_API_URL}/api/bookings`, formData);
-      
       alert('Booking submitted!');
     } catch (err) {
       alert('Error submitting booking.');

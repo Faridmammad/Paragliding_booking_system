@@ -34,7 +34,7 @@ const BookingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5005/api/bookings', formData);
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/bookings`, formData);
       
       alert('Booking submitted!');
     } catch (err) {

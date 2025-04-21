@@ -77,7 +77,11 @@ const BookingForm = () => {
 
       <button type="submit">Submit Booking</button>
     </form>
+
+    
   );
+  
 };
+console.log("API URL:", process.env.REACT_APP_API_URL);
 
 export default BookingForm;

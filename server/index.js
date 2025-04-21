@@ -1,13 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+require('dotenv').config();
+
 
 const app = express();
 const PORT = 5005;
 
 // CORS config
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',                // for local dev
+    'https://  paragliding-booking-system.vercel.app'  
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 };
@@ -16,7 +21,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/paragliding_booking')
+mongoose.connect(process.env.MONGODB_URI)
+
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 

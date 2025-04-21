@@ -11,7 +11,7 @@ const PORT = 5005;
 const corsOptions = {
   origin: [
     'http://localhost:3000',                // for local dev
-    'https://  paragliding-booking-system.vercel.app'  
+    'https://paragliding-booking-system.vercel.app'  
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,

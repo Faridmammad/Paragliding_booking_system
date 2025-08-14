@@ -4,30 +4,73 @@
   align-items: center;
 }
 
+@mixin glass-effect {
+  background: $background-glass;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 @mixin input-style {
-  padding: 0.6rem 1rem;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: $border-radius;
+  border: 2px solid $border-color;
+  border-radius: $border-radius-small;
   transition: $transition;
+  background: white;
+  font-family: $font-stack;
+  color: $text-color;
+
+  &::placeholder {
+    color: $text-light;
+  }
 
   &:focus {
     outline: none;
     border-color: $primary-color;
-    box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    transform: translateY(-1px);
+  }
+
+  &:hover {
+    border-color: $secondary-color;
   }
 }
 
 @mixin button-style($bg, $color: white) {
-  background-color: $bg;
+  background: linear-gradient(135deg, $bg 0%, darken($bg, 10%) 100%);
   color: $color;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: $border-radius;
+  padding: 0.75rem 1.5rem;
+  border-radius: $border-radius-small;
   cursor: pointer;
   transition: $transition;
+  font-family: $font-stack;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: $shadow-light;
 
   &:hover {
-    background-color: darken($bg, 10%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-medium;
   }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+@mixin card-style {
+  background: $background-light;
+  border-radius: $border-radius;
+  box-shadow: $shadow-medium;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
